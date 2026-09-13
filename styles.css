@@ -126,11 +126,12 @@ h1 {
 .centered-heading { max-width: 720px; margin: 0 auto 26px; text-align: center; }
 
 .section-kicker {
-  margin: 0 0 8px !important;
+  margin: 0 auto 8px !important;
   color: var(--blue) !important;
-  font-size: 0.78rem !important;
+  font-size: 0.95rem !important;
   font-weight: 500;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.13em;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -397,8 +398,10 @@ h2 {
   border-collapse: separate;
   border-spacing: 0;
   color: var(--text);
-  font-size: 0.8rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 0.88rem;
   font-variant-numeric: tabular-nums;
+  line-height: 1.35;
   white-space: nowrap;
 }
 
@@ -407,7 +410,7 @@ h2 {
 
 .result-table th,
 .result-table td {
-  padding: 6px 9px;
+  padding: 8px 10px;
   text-align: center;
   border: 0;
 }
@@ -422,7 +425,7 @@ h2 {
 .dataset-table thead tr:last-child th,
 .dataset-table thead th[rowspan] { border-bottom: 1px solid #55595d; }
 .dataset-table thead tr:first-child th[colspan] { border-bottom: 1px solid #a5a8ab; }
-.result-table .metric-headings th { color: var(--text); font-size: 0.76rem; font-weight: 400; }
+.result-table .metric-headings th { color: var(--text); font-size: 0.82rem; font-weight: 400; }
 
 .result-table .method-column {
   position: sticky;
@@ -519,7 +522,7 @@ h2 {
   .video-comparison-grid { grid-template-columns: 1fr; }
   .result-title-row { align-items: flex-start; flex-direction: column; gap: 7px; }
   .result-block + .result-block { margin-top: 34px; }
-  .result-table th, .result-table td { padding: 6px 8px; }
+  .result-table th, .result-table td { padding: 7px 8px; }
   .abstract-copy p { text-align: left; }
 }
 
