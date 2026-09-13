@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=split-drag" />
+    <link rel="stylesheet" href="styles.css?v=four-comparisons" />
   </head>
   <body>
     <main>
@@ -99,81 +99,114 @@
             <h2 id="videos-title">Cross-Scale Video Comparisons</h2>
           </div>
 
-          <div class="video-comparison-grid">
-            <figure class="video-comparison-card" data-video-comparison style="--position: 50%">
-              <div class="video-comparison-view">
-                <video class="compare-video compare-video-base" muted loop playsinline preload="metadata" poster="assets/videos/compare/sci-art-momentum-poster.jpg">
-                  <source src="assets/videos/compare/sci-art-momentum.mp4" type="video/mp4" />
-                </video>
-                <div class="compare-video-overlay">
-                  <video class="compare-video compare-video-top" muted loop playsinline preload="metadata" poster="assets/videos/compare/sci-art-spectrum-poster.jpg">
-                    <source src="assets/videos/compare/sci-art-spectrum.mp4" type="video/mp4" />
+          <div class="video-comparison-group" aria-labelledby="octree-comparisons-title">
+            <h3 class="video-comparison-group-title" id="octree-comparisons-title">Octree-GS <span>vs.</span> Ours</h3>
+            <div class="video-comparison-grid">
+              <figure class="video-comparison-card" data-video-comparison style="--position: 50%">
+                <div class="video-comparison-view residence-view">
+                  <video class="compare-video compare-video-base" muted loop playsinline preload="metadata" poster="assets/videos/compare/residence-octree-poster.jpg?v=20260913-corrected">
+                    <source src="assets/videos/compare/residence-octree.mp4?v=20260913-corrected" type="video/mp4" />
                   </video>
+                  <div class="compare-video-overlay">
+                    <video class="compare-video compare-video-top" muted loop playsinline preload="metadata" poster="assets/videos/compare/residence-spectrum-poster.jpg?v=20260913">
+                      <source src="assets/videos/compare/residence-spectrum.mp4?v=20260913" type="video/mp4" />
+                    </video>
+                  </div>
+                  <span class="method-label method-label-left">Octree-GS</span>
+                  <span class="method-label method-label-right">Ours</span>
+                  <div class="comparison-divider" aria-hidden="true"><span>↔</span></div>
+                  <input class="comparison-slider" type="range" min="0" max="100" value="50" aria-label="Adjust Residence video comparison split" />
                 </div>
-                <span class="method-label method-label-left">Momentum-GS</span>
-                <span class="method-label method-label-right">Spectrum-GS</span>
-                <div class="comparison-divider" aria-hidden="true"><span>↔</span></div>
-                <input class="comparison-slider" type="range" min="0" max="100" value="50" aria-label="Adjust Sci-Art video comparison split" />
-              </div>
-              <figcaption>
-                <strong>Sci-Art</strong>
-                <div class="video-playback-controls">
-                  <button class="video-toggle" type="button" aria-label="Play Sci-Art comparison"><span aria-hidden="true">▶</span></button>
-                  <input class="video-seek" type="range" min="0" max="6.033" step="0.01" value="0" aria-label="Seek Sci-Art comparison" />
-                  <span class="video-time">0:00 / 0:06</span>
-                </div>
-              </figcaption>
-            </figure>
+                <figcaption>
+                  <strong>Residence</strong>
+                  <div class="video-playback-controls">
+                    <button class="video-toggle" type="button" aria-label="Play Residence comparison"><span aria-hidden="true">▶</span></button>
+                    <input class="video-seek" type="range" min="0" max="6.033" step="0.01" value="0" aria-label="Seek Residence comparison" />
+                    <span class="video-time">0:00 / 0:06</span>
+                  </div>
+                </figcaption>
+              </figure>
 
-            <figure class="video-comparison-card" data-video-comparison style="--position: 50%">
-              <div class="video-comparison-view residence-view">
-                <video class="compare-video compare-video-base" muted loop playsinline preload="metadata" poster="assets/videos/compare/residence-momentum-poster.jpg">
-                  <source src="assets/videos/compare/residence-momentum.mp4" type="video/mp4" />
-                </video>
-                <div class="compare-video-overlay">
-                  <video class="compare-video compare-video-top" muted loop playsinline preload="metadata" poster="assets/videos/compare/residence-spectrum-poster.jpg">
-                    <source src="assets/videos/compare/residence-spectrum.mp4" type="video/mp4" />
+              <figure class="video-comparison-card" data-video-comparison style="--position: 50%">
+                <div class="video-comparison-view">
+                  <video class="compare-video compare-video-base" muted loop playsinline preload="metadata" poster="assets/videos/compare/rubble-octree-poster.jpg?v=20260913-corrected">
+                    <source src="assets/videos/compare/rubble-octree.mp4?v=20260913-corrected" type="video/mp4" />
                   </video>
+                  <div class="compare-video-overlay">
+                    <video class="compare-video compare-video-top" muted loop playsinline preload="metadata" poster="assets/videos/compare/rubble-spectrum-poster.jpg?v=20260913">
+                      <source src="assets/videos/compare/rubble-spectrum.mp4?v=20260913" type="video/mp4" />
+                    </video>
+                  </div>
+                  <span class="method-label method-label-left">Octree-GS</span>
+                  <span class="method-label method-label-right">Ours</span>
+                  <div class="comparison-divider" aria-hidden="true"><span>↔</span></div>
+                  <input class="comparison-slider" type="range" min="0" max="100" value="50" aria-label="Adjust Rubble video comparison split" />
                 </div>
-                <span class="method-label method-label-left">Momentum-GS</span>
-                <span class="method-label method-label-right">Spectrum-GS</span>
-                <div class="comparison-divider" aria-hidden="true"><span>↔</span></div>
-                <input class="comparison-slider" type="range" min="0" max="100" value="50" aria-label="Adjust Residence video comparison split" />
-              </div>
-              <figcaption>
-                <strong>Residence</strong>
-                <div class="video-playback-controls">
-                  <button class="video-toggle" type="button" aria-label="Play Residence comparison"><span aria-hidden="true">▶</span></button>
-                  <input class="video-seek" type="range" min="0" max="6.033" step="0.01" value="0" aria-label="Seek Residence comparison" />
-                  <span class="video-time">0:00 / 0:06</span>
-                </div>
-              </figcaption>
-            </figure>
+                <figcaption>
+                  <strong>Rubble</strong>
+                  <div class="video-playback-controls">
+                    <button class="video-toggle" type="button" aria-label="Play Rubble comparison"><span aria-hidden="true">▶</span></button>
+                    <input class="video-seek" type="range" min="0" max="6.033" step="0.01" value="0" aria-label="Seek Rubble comparison" />
+                    <span class="video-time">0:00 / 0:06</span>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
 
-            <figure class="video-comparison-card" data-video-comparison style="--position: 50%">
-              <div class="video-comparison-view">
-                <video class="compare-video compare-video-base" muted loop playsinline preload="metadata" poster="assets/videos/compare/building-momentum-poster.jpg">
-                  <source src="assets/videos/compare/building-momentum.mp4" type="video/mp4" />
-                </video>
-                <div class="compare-video-overlay">
-                  <video class="compare-video compare-video-top" muted loop playsinline preload="metadata" poster="assets/videos/compare/building-spectrum-poster.jpg">
-                    <source src="assets/videos/compare/building-spectrum.mp4" type="video/mp4" />
+          <div class="video-comparison-group" aria-labelledby="momentum-comparisons-title">
+            <h3 class="video-comparison-group-title" id="momentum-comparisons-title">Momentum-GS <span>vs.</span> Ours</h3>
+            <div class="video-comparison-grid">
+              <figure class="video-comparison-card" data-video-comparison style="--position: 50%">
+                <div class="video-comparison-view">
+                  <video class="compare-video compare-video-base" muted loop playsinline preload="metadata" poster="assets/videos/compare/sci-art-momentum-poster.jpg?v=20260913">
+                    <source src="assets/videos/compare/sci-art-momentum.mp4?v=20260913" type="video/mp4" />
                   </video>
+                  <div class="compare-video-overlay">
+                    <video class="compare-video compare-video-top" muted loop playsinline preload="metadata" poster="assets/videos/compare/sci-art-spectrum-poster.jpg?v=20260913">
+                      <source src="assets/videos/compare/sci-art-spectrum.mp4?v=20260913" type="video/mp4" />
+                    </video>
+                  </div>
+                  <span class="method-label method-label-left">Momentum-GS</span>
+                  <span class="method-label method-label-right">Ours</span>
+                  <div class="comparison-divider" aria-hidden="true"><span>↔</span></div>
+                  <input class="comparison-slider" type="range" min="0" max="100" value="50" aria-label="Adjust Sci-Art video comparison split" />
                 </div>
-                <span class="method-label method-label-left">Momentum-GS</span>
-                <span class="method-label method-label-right">Spectrum-GS</span>
-                <div class="comparison-divider" aria-hidden="true"><span>↔</span></div>
-                <input class="comparison-slider" type="range" min="0" max="100" value="50" aria-label="Adjust Building video comparison split" />
-              </div>
-              <figcaption>
-                <strong>Building</strong>
-                <div class="video-playback-controls">
-                  <button class="video-toggle" type="button" aria-label="Play Building comparison"><span aria-hidden="true">▶</span></button>
-                  <input class="video-seek" type="range" min="0" max="6.033" step="0.01" value="0" aria-label="Seek Building comparison" />
-                  <span class="video-time">0:00 / 0:06</span>
+                <figcaption>
+                  <strong>Sci-Art</strong>
+                  <div class="video-playback-controls">
+                    <button class="video-toggle" type="button" aria-label="Play Sci-Art comparison"><span aria-hidden="true">▶</span></button>
+                    <input class="video-seek" type="range" min="0" max="6.033" step="0.01" value="0" aria-label="Seek Sci-Art comparison" />
+                    <span class="video-time">0:00 / 0:06</span>
+                  </div>
+                </figcaption>
+              </figure>
+
+              <figure class="video-comparison-card" data-video-comparison style="--position: 50%">
+                <div class="video-comparison-view">
+                  <video class="compare-video compare-video-base" muted loop playsinline preload="metadata" poster="assets/videos/compare/building-momentum-poster.jpg?v=20260913">
+                    <source src="assets/videos/compare/building-momentum.mp4?v=20260913" type="video/mp4" />
+                  </video>
+                  <div class="compare-video-overlay">
+                    <video class="compare-video compare-video-top" muted loop playsinline preload="metadata" poster="assets/videos/compare/building-spectrum-poster.jpg?v=20260913">
+                      <source src="assets/videos/compare/building-spectrum.mp4?v=20260913" type="video/mp4" />
+                    </video>
+                  </div>
+                  <span class="method-label method-label-left">Momentum-GS</span>
+                  <span class="method-label method-label-right">Ours</span>
+                  <div class="comparison-divider" aria-hidden="true"><span>↔</span></div>
+                  <input class="comparison-slider" type="range" min="0" max="100" value="50" aria-label="Adjust Building video comparison split" />
                 </div>
-              </figcaption>
-            </figure>
+                <figcaption>
+                  <strong>Building</strong>
+                  <div class="video-playback-controls">
+                    <button class="video-toggle" type="button" aria-label="Play Building comparison"><span aria-hidden="true">▶</span></button>
+                    <input class="video-seek" type="range" min="0" max="6.033" step="0.01" value="0" aria-label="Seek Building comparison" />
+                    <span class="video-time">0:00 / 0:06</span>
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </section>
