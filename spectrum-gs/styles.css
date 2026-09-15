@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Jost";
+  src: url("assets/fonts/Jost-Variable.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+}
+
 :root {
   --ink: #363a3f;
   --text: #4d5258;

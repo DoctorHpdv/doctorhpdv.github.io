@@ -9,10 +9,8 @@
     />
     <meta name="theme-color" content="#ffffff" />
     <title>Spectrum-GS</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=centered-section-kickers" />
+    <link rel="preload" href="assets/fonts/Jost-Variable.ttf" as="font" type="font/ttf" crossorigin />
+    <link rel="stylesheet" href="styles.css?v=performance-20260915" />
   </head>
   <body>
     <main>
@@ -82,12 +80,17 @@
         </div>
         <figure class="pipeline-figure">
           <a href="assets/pipeline.png?v=pipeline-pdf" target="_blank" rel="noreferrer" aria-label="Open the pipeline at full resolution">
-            <img
+            <picture>
+              <source srcset="assets/pipeline-preview.webp?v=performance-20260915" type="image/webp" />
+              <img
               src="assets/pipeline.png?v=pipeline-pdf"
               width="2014"
               height="1212"
+              loading="lazy"
+              decoding="async"
               alt="Spectrum-GS pipeline: SfM-guided coarse scale estimation, continuous scale modeling, and scale-aware Gaussian optimization"
             />
+            </picture>
           </a>
           <figcaption>
             <strong>Overview of Spectrum-GS.</strong> SfM geometry establishes coarse scale guidance; view and anchor cues
@@ -108,12 +111,12 @@
             <div class="video-comparison-grid">
               <figure class="video-comparison-card" data-video-comparison style="--position: 50%">
                 <div class="video-comparison-view residence-view">
-                  <video class="compare-video compare-video-base" muted loop playsinline preload="metadata" poster="assets/videos/compare/residence-octree-poster.jpg?v=20260913-corrected">
-                    <source src="assets/videos/compare/residence-octree.mp4?v=20260913-corrected" type="video/mp4" />
+                  <video class="compare-video compare-video-base" muted loop playsinline preload="none" poster="assets/videos/compare/residence-octree-poster.jpg?v=20260913-corrected">
+                    <source data-src="assets/videos/compare/residence-octree.mp4?v=20260913-corrected" type="video/mp4" />
                   </video>
                   <div class="compare-video-overlay">
-                    <video class="compare-video compare-video-top" muted loop playsinline preload="metadata" poster="assets/videos/compare/residence-spectrum-poster.jpg?v=20260913">
-                      <source src="assets/videos/compare/residence-spectrum.mp4?v=20260913" type="video/mp4" />
+                    <video class="compare-video compare-video-top" muted loop playsinline preload="none" poster="assets/videos/compare/residence-spectrum-poster.jpg?v=20260913">
+                      <source data-src="assets/videos/compare/residence-spectrum.mp4?v=20260913" type="video/mp4" />
                     </video>
                   </div>
                   <span class="method-label method-label-left">Octree-GS</span>
@@ -133,12 +136,12 @@
 
               <figure class="video-comparison-card" data-video-comparison style="--position: 50%">
                 <div class="video-comparison-view">
-                  <video class="compare-video compare-video-base" muted loop playsinline preload="metadata" poster="assets/videos/compare/rubble-octree-poster.jpg?v=20260913-corrected">
-                    <source src="assets/videos/compare/rubble-octree.mp4?v=20260913-corrected" type="video/mp4" />
+                  <video class="compare-video compare-video-base" muted loop playsinline preload="none" poster="assets/videos/compare/rubble-octree-poster.jpg?v=20260913-corrected">
+                    <source data-src="assets/videos/compare/rubble-octree.mp4?v=20260913-corrected" type="video/mp4" />
                   </video>
                   <div class="compare-video-overlay">
-                    <video class="compare-video compare-video-top" muted loop playsinline preload="metadata" poster="assets/videos/compare/rubble-spectrum-poster.jpg?v=20260913">
-                      <source src="assets/videos/compare/rubble-spectrum.mp4?v=20260913" type="video/mp4" />
+                    <video class="compare-video compare-video-top" muted loop playsinline preload="none" poster="assets/videos/compare/rubble-spectrum-poster.jpg?v=20260913">
+                      <source data-src="assets/videos/compare/rubble-spectrum.mp4?v=20260913" type="video/mp4" />
                     </video>
                   </div>
                   <span class="method-label method-label-left">Octree-GS</span>
@@ -163,12 +166,12 @@
             <div class="video-comparison-grid">
               <figure class="video-comparison-card" data-video-comparison style="--position: 50%">
                 <div class="video-comparison-view">
-                  <video class="compare-video compare-video-base" muted loop playsinline preload="metadata" poster="assets/videos/compare/sci-art-momentum-poster.jpg?v=20260913">
-                    <source src="assets/videos/compare/sci-art-momentum.mp4?v=20260913" type="video/mp4" />
+                  <video class="compare-video compare-video-base" muted loop playsinline preload="none" poster="assets/videos/compare/sci-art-momentum-poster.jpg?v=20260913">
+                    <source data-src="assets/videos/compare/sci-art-momentum.mp4?v=20260913" type="video/mp4" />
                   </video>
                   <div class="compare-video-overlay">
-                    <video class="compare-video compare-video-top" muted loop playsinline preload="metadata" poster="assets/videos/compare/sci-art-spectrum-poster.jpg?v=20260913">
-                      <source src="assets/videos/compare/sci-art-spectrum.mp4?v=20260913" type="video/mp4" />
+                    <video class="compare-video compare-video-top" muted loop playsinline preload="none" poster="assets/videos/compare/sci-art-spectrum-poster.jpg?v=20260913">
+                      <source data-src="assets/videos/compare/sci-art-spectrum.mp4?v=20260913" type="video/mp4" />
                     </video>
                   </div>
                   <span class="method-label method-label-left">Momentum-GS</span>
@@ -188,12 +191,12 @@
 
               <figure class="video-comparison-card" data-video-comparison style="--position: 50%">
                 <div class="video-comparison-view">
-                  <video class="compare-video compare-video-base" muted loop playsinline preload="metadata" poster="assets/videos/compare/building-momentum-poster.jpg?v=20260913">
-                    <source src="assets/videos/compare/building-momentum.mp4?v=20260913" type="video/mp4" />
+                  <video class="compare-video compare-video-base" muted loop playsinline preload="none" poster="assets/videos/compare/building-momentum-poster.jpg?v=20260913">
+                    <source data-src="assets/videos/compare/building-momentum.mp4?v=20260913" type="video/mp4" />
                   </video>
                   <div class="compare-video-overlay">
-                    <video class="compare-video compare-video-top" muted loop playsinline preload="metadata" poster="assets/videos/compare/building-spectrum-poster.jpg?v=20260913">
-                      <source src="assets/videos/compare/building-spectrum.mp4?v=20260913" type="video/mp4" />
+                    <video class="compare-video compare-video-top" muted loop playsinline preload="none" poster="assets/videos/compare/building-spectrum-poster.jpg?v=20260913">
+                      <source data-src="assets/videos/compare/building-spectrum.mp4?v=20260913" type="video/mp4" />
                     </video>
                   </div>
                   <span class="method-label method-label-left">Momentum-GS</span>
@@ -302,6 +305,6 @@
 
     </main>
 
-    <script src="script.js?v=split-drag2"></script>
+    <script src="script.js?v=performance-20260915"></script>
   </body>
 </html>

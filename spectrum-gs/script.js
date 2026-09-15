@@ -17,6 +17,20 @@ document.querySelectorAll("[data-video-comparison]").forEach((comparison) => {
   let animationFrame;
   let isSeeking = false;
   let isDraggingSplit = false;
+  let mediaLoaded = false;
+
+  const loadMedia = () => {
+    if (mediaLoaded) return;
+    mediaLoaded = true;
+
+    [baseVideo, topVideo].forEach((video) => {
+      const source = video.querySelector("source[data-src]");
+      if (!source) return;
+      source.src = source.dataset.src;
+      source.removeAttribute("data-src");
+      video.load();
+    });
+  };
 
   const updateSplit = () => {
     comparisonView.style.setProperty("--position", `${splitSlider.value}%`);
@@ -78,6 +92,7 @@ document.querySelectorAll("[data-video-comparison]").forEach((comparison) => {
   };
 
   const playBoth = async () => {
+    loadMedia();
     topVideo.currentTime = baseVideo.currentTime;
     const results = await Promise.allSettled([baseVideo.play(), topVideo.play()]);
     const playing = results.some((result) => result.status === "fulfilled") && !baseVideo.paused;
@@ -143,6 +158,19 @@ document.querySelectorAll("[data-video-comparison]").forEach((comparison) => {
   baseVideo.addEventListener("play", () => setPlayingState(true));
 
   splitSlider.addEventListener("input", updateSplit);
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        loadMedia();
+        observer.disconnect();
+      },
+      { rootMargin: "240px 0px" },
+    );
+    observer.observe(comparison);
+  }
+
   updateSplit();
   updateTimeline();
 });
