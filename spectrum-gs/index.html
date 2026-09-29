@@ -65,18 +65,24 @@
         </div>
         <div class="abstract-copy">
           <p>
-            3D Gaussian Splatting has gained increasing attention in remote sensing and photogrammetry for its efficient
-            rendering and flexible scene representation. However, reconstructing city-scale scenes across extreme
-            observation-scale ranges remains challenging: building boundaries, repetitive textures, and thin structures
-            can become blurred or incomplete as their projected size changes substantially between views.
-          </p>
-          <p>
-            We propose <strong>Spectrum-GS</strong>, a continuous scale-adaptive framework that connects Gaussian rendering
-            and density optimization through a shared observation-scale condition. Structure from Motion geometry provides
-            coarse scale guidance, which is refined using global viewing information and local scene cues. Matching the
-            resulting condition to learnable Gaussian scale receptive fields drives the adaptation of opacity, spatial
-            extent, and color. Experiments on BungeeNeRF, Mill19, UrbanScene3D, and MatrixCity demonstrate improved rendering
-            quality over the Momentum-GS backbone.
+            3D Gaussian Splatting (3DGS) has emerged as an efficient representation for large-scale remote sensing and urban
+            reconstruction, yet preserving scene details across diverse observation scales remains challenging. Recent
+            level-of-detail (LoD) 3DGS methods have made substantial progress in multi-scale rendering. However, they mainly
+            use scale to regulate the rendering contribution of existing Gaussians, leaving density optimization
+            scale-agnostic. Consequently, scale-specific details may be under-densified or wrongly pruned. In this paper, we
+            present <strong>Spectrum-GS</strong>, a continuous scale-adaptive framework that jointly guides rendering and
+            density optimization through a shared observation-scale condition. Specifically, Spectrum-GS derives coarse
+            scale guidance from Structure-from-Motion (SfM) geometry, then refines it into a continuous observation-scale
+            condition with global viewing and local scene cues. Based on this condition, we introduce learnable scale
+            receptive fields that adapt Gaussian opacity, spatial extent, and color. Beyond attribute adaptation,
+            scale-aware density control applies the same condition to direct Gaussian growth toward scale-specific detail
+            demands and protect primitives valuable at particular scales. New primitives inherit the receptive-field
+            parameters of their parents, so growth and retention follow detail demands across observation scales. Extensive
+            experiments on BungeeNeRF demonstrate that Spectrum-GS achieves state-of-the-art performance under extreme
+            observation-scale variation. Results on Mill19, UrbanScene3D, and MatrixCity demonstrate its effectiveness for
+            large-scale scene reconstruction. Qualitative comparisons further show improved preservation of fine structures
+            and architectural details across scales. Project page:
+            <a href="https://doctorhpdv.github.io/spectrum-gs/">https://doctorhpdv.github.io/spectrum-gs/</a>.
           </p>
         </div>
       </section>
